@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    font-size: 0.94em;
+    line-height: 135%;
+    font-family: 'Roboto Slab', sans-serif;
+    background: white;
+    color: #484848;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    text-align: center;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+form {
+    margin: 20px auto 0;
+}
+
+label {
+    color: #555;
+    display: inline-block;
+    padding-top: 10px;
+}
+
+textarea {
+    margin: 10px;
+    display: block;
+}
+
+p a {
+    font-size: 11px;
+    color: #aaa;
+    float: right;
+    margin-top: -13px;
+    margin-right: 20px;
+    transition: all .4s ease;
+}
+
+p a:hover {
+    color: #555;
+}
+
+input {
+    display: block;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #cfcfcf;
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 16px;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+    padding: 12px;
+    background: #999;
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    border-bottom: 2px solid #797979;
+}
+
+.header-image {
+    display: block;
+    width: 100%;
+}
+
+nav {
+    height: 100px;
+    box-shadow: 0 0 28px -12px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+}
+
+nav div {
+    margin: 0 auto;
+}
+
+nav div a {
+    padding: 0 40px;
+    font-size: 20px;
+    font-family: "Open Sans", serif;
+    font-weight: 600;
+    color: rgb(46, 46, 46);
+    text-transform: uppercase;
+    line-height: 1.2;
+    letter-spacing: 2px;
+}
+
+#wrapper {
+    background: #fbfafa;
+    padding: 98px 0 173px 0;
+    position: relative;
+    z-index: -2;
+}
+
+#wrapper img {
+    display: block;
+    margin: 12px auto;
+}
+
+.dirty-dogs {
+    font-size: 56px;
+    font-family: "Open Sans", serif;
+    font-weight: 300;
+    color: #555559;
+    text-align: center;
+    margin: 24px auto 77px;
+    line-height: 1.2;
+}
+
+.more-dogs {
+    border-radius: 6px;
+    font-size: 20px;
+    background-color: rgb(40, 103, 130);
+    font-family: "Open Sans", serif;
+    font-weight: 100;
+    width: 310px;
+    height: 65px;
+    margin: 0 auto;
+    display: block;
+
+}
+
+.dish-description {
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+    line-height: 1.333;
+    width: 408px;
+    margin: 40px 44px 0;
+}
+
+.image-box {
+    display: flex;
+    align-items: center;
+}
+
+.image-box .description {
+    margin: 10px auto;
+    text-align: left;
+    padding: 10px;
+}
+
+.image-box img {
+    width: 50%;
+}
+
+.dish-name {
+    font-size: 24px;
+    color: rgb(85, 85, 89);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+}
+
+.footer {
+    width: 100%;
+    background: #efefef;
+    height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.copyright {
+    font-size: 14px;
+    font-family: "Myriad Pro", serif;
+    line-height: 1.714;
+}
+
+.address {
+    font-size: 14px;
+    font-family: "Myriad Pro", serif;
+    line-height: 1.714;
+}
+
+.order_0 {
+    order: 0;
+
+}
+
+.order_1 {
+    order: 1;
+}
+
+@media screen and (max-width: 1000px) {
+    .dish-description {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    nav {
+        height: auto;
+    }
+
+    nav div a {
+        width: 100%;
+        display: block;
+        padding: 8px 0;
+    }
+
+    .dish-description {
+        margin: 20px 44px 0;
+    }
+
+    .image-box {
+        height: auto;
+        display: block;
+    }
+
+    .image-box .description {
+        margin: 10px auto;
+    }
+
+    .image-box img {
+        width: 100%;
+    }
+
+    .footer {
+        flex-direction: column;
+        justify-content: center;
+    }
+}
