@@ -5,14 +5,14 @@ import ContactForm from "../components/ContactForm";
 import {BrowserRouter as Router, Link, Route, Switch} from "react-router-dom";
 
 const home = () => <Home/>;
-const contactForm = () => <ContactForm/>;
+const contactForm = () => <ContactForm/>; 
 
 class App extends Component {
     render() {
         return (
             <Router>
                 <div>
-                    <img src={require("../images/hotdogImages.png")} className="header-image"/>
+                    <img src={require("../images/hotdogImages.png")} alt="" className="header-image"/>
                     <nav>
                         <div>
                             <Link to="/menu">menu</Link>
@@ -23,6 +23,7 @@ class App extends Component {
                     </nav>
                     <Switch>
                         <Route exact path="/" component={home}/>
+                        <Route exact path="/menu" component={home}/>
                         <Route path="/contact" component={contactForm}/>
                     </Switch>
                     <footer className="footer">
