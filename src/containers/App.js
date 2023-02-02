@@ -12,7 +12,7 @@ class App extends Component {
         return (
             <Router>
                 <div>
-                    <img src={require("../images/hotdogImages.png")} alt="" className="header-image"/>
+                    <img src={require("../images/healthy_receries.png")} alt="" className="header-image"/>
                     <nav>
                         <div>
                             <Link to="/menu">menu</Link>

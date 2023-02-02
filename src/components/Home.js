@@ -11,13 +11,12 @@ class Home extends Component {
     }
 
     getMenuItem() {
-        axios.get('https://formula-test-api.herokuapp.com/menu')
+
+        axios.get("../menu.json")
             .then((response) => {
-                // TODO: all dates are expired. That's why I picked a random date instead of currentDate.
-                const menuItemsFilteredByDate = response.data.filter(item => item.expirationDate > "05-01-2023");
-               
+                const menuItems = response.data;
                 this.setState({
-                    menuItems: menuItemsFilteredByDate
+                    menuItems: menuItems
                 });
             })
             .catch((error) => console.log(error));
@@ -27,25 +26,24 @@ class Home extends Component {
         return (
             <div>
                 <section id="wrapper">
-                    <img src={require("../images/hotdog.png")} alt=""/>
+                    <img src={require("../images/salad_icon.png")} alt="" />
                     <div className="dirty-dogs">
                         Dirty Dogs serves all-beef, vegan and <br/>vegatagian hot dogs.
                     </div>
                     <button className="button more-dogs">More Dogs ‘n Make Em Hot</button>
                 </section>
-                {this.state.menuItems.map(function (item, index) {
-                 const {name, description, backgroundURL} = item;
+                {this.state.menuItems.map(function (item) {
                     return (
                         <div className="image-box" key={item.id}>
-                            <div className={"description " + ((index % 2 === 0) ? 'order_0' : 'order_1')}>
+                          <div className={"description " + ((item.id % 2 === 0) ? 'order_0' : 'order_1')}>
                                 <div className="dish-name">
-                                    &#8212;&#160;&#160; {name}
+                                    &#8212;&#160;&#160; {item.title}
                                 </div>
                                 <div className="dish-description">
-                                    {description}
+                                    {item.desc}
                                 </div>
-                            </div>
-                            <img src={backgroundURL} alt=""/>
+                           </div>
+                          <img src={item.img} alt=" " />
                         </div>
                     );
                 })
