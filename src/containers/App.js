@@ -26,14 +26,6 @@ class App extends Component {
                         <Route exact path="/menu" component={home}/>
                         <Route path="/contact" component={contactForm}/>
                     </Switch>
-                    <footer className="footer">
-                        <span className="copyright">
-                            ® 2016 Dirty Dogs all rights reserved
-                        </span>
-                        <span className="address">
-                            274 Marconi Blvd. Columbus, Ohio 43215 &#160;|&#160;614.538.0095 &#160;|&#160;Contact Us
-                        </span>
-                    </footer>
                 </div>
             </Router>
         );
