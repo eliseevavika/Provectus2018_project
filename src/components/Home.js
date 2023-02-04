@@ -1,27 +1,19 @@
 import React, {Component} from "react";
 import axios from "axios";
 import history from '../containers/history';
+import { useState, useEffect } from 'react';
+import { useHistory } from "react-router-dom";
+
 
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
             menuItems: [],
-            ingredients: []
+            item: null
         };
         this.getMenuItem();
-      this.onItemClick = this.onItemClick.bind(this);
-
     }
-
-
-     onItemClick(item) {
-     const ingredients = item.ingredients;
-     this.setState({
-         ingredients: ingredients
-     });
-  }
-
 
     getMenuItem() {
 
@@ -35,7 +27,7 @@ class Home extends Component {
             .catch((error) => console.log(error));
     }
 
-    render() {
+    render(){
 
         return (
             <div>
@@ -51,15 +43,18 @@ class Home extends Component {
                         <div className="image-box" key={item.id}>
                           <div className={"description " + ((item.id % 2 === 0) ? 'order_0' : 'order_1')}>
                            <form>
-                            <button onClick={() => history.push('/products', item)}>Click button to view products</button>
+
+                            <button onClick={() => history.push({pathname: '/products', state: { item: item }})} >Click button to view products</button>
+
+
                                       </form>
 
 
 
                              {item.ingredients.map((ingredient) => (
 
-                                         <ul>
-                                           <li key="{ingredient}">{ingredient} </li>
+                                         <ul key={ingredient}>
+                                           <li key={ingredient}>{ingredient} </li>
 
                                          </ul>
                                      ))}

@@ -17,9 +17,10 @@ class App extends Component {
                     <nav>
                         <div>
                             <Link to="/menu">menu</Link>
-                            <Link to="/catering">catering</Link>
+                            <Link to="/products">products</Link>
                             <Link to="/about">about</Link>
                             <Link to="/contact">contact</Link>
+
                         </div>
                     </nav>
 
