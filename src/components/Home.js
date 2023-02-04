@@ -1,19 +1,27 @@
 import React, {Component} from "react";
 import axios from "axios";
+import history from '../containers/history';
 
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            menuItems: []
+            menuItems: [],
+            ingredients: []
         };
         this.getMenuItem();
       this.onItemClick = this.onItemClick.bind(this);
+
     }
 
+
      onItemClick(item) {
-        console.log(item);
-      }
+     const ingredients = item.ingredients;
+     this.setState({
+         ingredients: ingredients
+     });
+  }
+
 
     getMenuItem() {
 
@@ -28,6 +36,7 @@ class Home extends Component {
     }
 
     render() {
+
         return (
             <div>
                 <section id="wrapper">
@@ -40,8 +49,20 @@ class Home extends Component {
                  {this.state.menuItems.map(function (item) {
                     return (
                         <div className="image-box" key={item.id}>
-                        <button onClick={() => this.onItemClick(item)}>Show Content</button>
                           <div className={"description " + ((item.id % 2 === 0) ? 'order_0' : 'order_1')}>
+                           <form>
+                            <button onClick={() => history.push('/products', item)}>Click button to view products</button>
+                                      </form>
+
+
+
+                             {item.ingredients.map((ingredient) => (
+
+                                         <ul>
+                                           <li key="{ingredient}">{ingredient} </li>
+
+                                         </ul>
+                                     ))}
                                 <div className="dish-name">
                                     &#8212;&#160;&#160; {item.title}
                                 </div>

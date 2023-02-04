@@ -2,17 +2,18 @@ import React, {Component} from 'react';
 import '../styles/App.css';
 import Home from '../components/Home';
 import ContactForm from "../components/ContactForm";
-import {BrowserRouter as Router, Link, Route, Switch} from "react-router-dom";
+import Products from "../components/Products";
+import {Router, Link, Route, Routes} from "react-router-dom";
+import history from './history';
 
-const home = () => <Home/>;
-const contactForm = () => <ContactForm/>; 
 
 class App extends Component {
     render() {
         return (
-            <Router>
+            <Router location={history.location} navigator={history}>
                 <div>
                     <img src={require("../images/healthy_receries.png")} alt="" className="header-image"/>
+
                     <nav>
                         <div>
                             <Link to="/menu">menu</Link>
@@ -21,11 +22,15 @@ class App extends Component {
                             <Link to="/contact">contact</Link>
                         </div>
                     </nav>
-                    <Switch>
-                        <Route exact path="/" component={home}/>
-                        <Route exact path="/menu" component={home}/>
-                        <Route path="/contact" component={contactForm}/>
-                    </Switch>
+
+                    <Routes>
+                        <Route exact path="/" element={<Home/>}/>
+                        <Route exact path="/menu" element={<Home/>}/>
+                        <Route path="/contact" element={<ContactForm/>}/>
+                        <Route path="/products" element={<Products/>}/>
+
+                    </Routes>
+
                 </div>
             </Router>
         );
